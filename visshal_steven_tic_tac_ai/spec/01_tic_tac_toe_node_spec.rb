@@ -121,9 +121,14 @@ describe TicTacToeNode do
   describe '#winning_node?' do
     let(:winner) do
       node = TicTacToeNode.new(Board.new, :x)
+      # node.board[[0, 0]] = :x
+      # node.board[[2, 2]] = :x
+      # node.board[[0, 2]] = :x
       node.board[[0, 0]] = :x
-      node.board[[2, 2]] = :x
       node.board[[0, 2]] = :x
+      node.board[[1, 0]] = :o
+      node.board[[1, 1]] = :o
+      node.board[[2, 0]] = :x
       node
     end
 

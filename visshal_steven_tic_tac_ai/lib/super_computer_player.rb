@@ -3,10 +3,8 @@ require_relative 'tic_tac_toe_node'
 class SuperComputerPlayer < ComputerPlayer
   def move(game, mark)
     node = TicTacToeNode.new(game.board,mark)
-    p game.board
     children = node.children
     children.each do  |child|
-          child.print_board 
          if child.winning_node?(mark)
             return child.prev_move_pos
          end 
